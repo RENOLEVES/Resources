@@ -1,6 +1,35 @@
+2/11
 /etc/passwd (: 7char)
 root:x:0:0:root:/root:/bin/bash
-
 username:x:uid:gid:discription:HOME:shell
 
-login shell:command line interpreter
++DON'T USE VIM TO CHANGE THE FILE
++login shell:command line interpreter
+
+2/12
+/etc/shadow
+
+encrypt algo:$id$salt$encrypted
+$1:MD5
+$5:SHA-256
+$6:SHA-512
+
+1. user name is the same as /etc/passwd
+
+2. encrypt type. and passwd
+ * means the account has been locked.
+ !! means this account's password is expired.
+
+3. last modify time. the day count from some time point to the last modify day.
+In SCOLinux, the start day is 1970/1/1.
+
+4. smallest time interval to change the passwd.
+
+4. maximum passwd age.
+
+
+
+
+
+
+
