@@ -1,5 +1,5 @@
 2/11
-/etc/passwd (: 7char)
+/etc/passwd (: 7 column)
 root:x:0:0:root:/root:/bin/bash
 username:x:uid:gid:discription:HOME:shell
 
@@ -7,7 +7,8 @@ username:x:uid:gid:discription:HOME:shell
 +login shell:command line interpreter
 
 2/12
-/etc/shadow
+/etc/shadow(: 9 column)
+root:$1$MYG2N:15636:0:99999:7: : :
 
 encrypt algo:$id$salt$encrypted
 $1:MD5
@@ -17,6 +18,9 @@ $6:SHA-512
 1. user name is the same as /etc/passwd
 
 2. encrypt type. and passwd
+$1$:MD5
+$5$:SHA-256
+$6$:SHA-512
  * means the account has been locked.
  !! means this account's password is expired.
 
@@ -25,11 +29,15 @@ In SCOLinux, the start day is 1970/1/1.
 
 4. smallest time interval to change the passwd.
 
-4. maximum passwd age.
+5. maximum passwd age.
 
+6. time interval to pop warning message to rest passwd.
 
+7. inactivity time, the longest day keep the account alive.(no login in).
 
+8. expire day, this account is no longer legal when reach the expire day.
 
+9. reserve space.
 
 
 
