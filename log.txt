@@ -101,6 +101,21 @@ user group
 	#gpasswd -d user02 hr
 
 
+sudo and -su
 
+1.permenant root mode, switching users with su, 
 
-	
+	# su - user04
+ 
+	# su -
+
+2.temporary root mode, running code with sudo
+
+	#sudo COMMAND
+
+	## change sudoers file, give certain accout a certain command.
+	vim /etc/sudoers
+	user01 ALL = (ALL) NOPASSWD: /usr/sbin/reboot,/usr/sbin/useradd,/usr/sbin/userdel
+
+//current level	
+su -l
