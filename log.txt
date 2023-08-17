@@ -1,0 +1,6 @@
+/etc/passwd (: 7char)
+root:x:0:0:root:/root:/bin/bash
+
+username:x:uid:gid:discription:HOME:shell
+
+login shell:command line interpreter
