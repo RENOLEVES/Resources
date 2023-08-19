@@ -1,0 +1,29 @@
+3/1
+UGO:
+user:	u
+group: 	g
+other：	o
+all: 	a(u+g+o)
+
+right type
+read	r=4
+write	w=2
+execution	x=1
+
+check right
+ls -l /root/1.txt
+-rw-r--r--. 1 root root 0 Aug 19 12:56 1.txt
+
+change right:
+	ugorwx:
+	# u g o r w x 
+	#chmod (u/g/o/a)(+/-/=)(r/w/x) file/directory
+	#chmod u+r 1.txt
+	#chmod a=rwx 1.txt  (-rwxrwxrwx) 
+	#chmod a=- 1.txt  (----------) 
+	#chmod ug=rw,o=r 1.txt (-rw-rw-r--)
+
+number
+
+basic level:
+ACL
