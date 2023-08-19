@@ -1,0 +1,121 @@
+2/11
+/etc/passwd (: 7 column)
+root:x:0:0:root:/root:/bin/bash
+username:x:uid:gid:discription:HOME:shell
+
++DON'T USE VIM TO CHANGE THE FILE
++login shell:command line interpreter
+
+2/12
+/etc/shadow(: 9 column)
+root:$1$MYG2N:15636:0:99999:7: : :
+
+encrypt algo:$id$salt$encrypted
+$1:MD5
+$5:SHA-256
+$6:SHA-512
+
+1. user name is the same as /etc/passwd
+
+2. encrypt type. and passwd
+$1$:MD5
+$5$:SHA-256
+$6$:SHA-512
+ * means the account has been locked.
+ !! means this account's password is expired.
+
+3. last modify time. the day count from some time point to the last modify day.
+In SCOLinux, the start day is 1970/1/1.
+
+4. smallest time interval to change the passwd.
+
+5. maximum passwd age.
+
+6. time interval to pop warning message to rest passwd.
+
+7. inactivity time, the longest day keep the account alive.(no login in).
+
+8. expire day, this account is no longer legal when reach the expire day.
+
+9. reserve space.
+
+2/13
+/etc/group
+root:x:0:
+g_name:g_passwd:gid:g_member(default is empty)
+
+1. create default user
+	# useradd user01
+
+	# id user01 (user01 info,  primary group)
+	(uid: gid: group)
+
+	# cat /etc/group (check all the user info)
+
+	# grep user04 /etc/passwd
+
+2. create user with setting
+	# useradd user02 -u 1503 (change uid, id, group to 1503)
+	
+	# useradd user03 -d /user03
+
+	#useradd -s /sbin/nologin user02 (create user02 but it can not login)
+
+3.delete user
+	# userdel -r user02
+
+4.user passwd
+	change root passwd:
+	# passwd
+
+	not root:
+	# passwd user_name
+
+5.manage setting
+	#usermode -s /sbin/nologin user02
+
+user group
+
+1. add group
+	#groupadd hr
+
+	#groupadd net01 -g 1008
+
+2. check
+	#tail -3 /etc/group
+
+3. delete 
+	#groupdel net01
+
+
+4. user and group
+
+	#id user04
+
+	#usermod -aG hr user04
+
+	uid=1503(user04) gid=1503(user04) groups=1503(user04),1505(hr)
+
+	primary group and other group.
+
+	#gpasswd -d user02 hr
+
+
+sudo and -su
+
+1.permenant root mode, switching users with su, 
+
+	# su - user04
+ 
+	# su -
+
+2.temporary root mode, running code with sudo
+
+	#sudo COMMAND
+
+	## change sudoers file, give certain accout a certain command.
+	vim /etc/sudoers
+	user01 ALL = (ALL) NOPASSWD: /usr/sbin/reboot,/usr/sbin/useradd,/usr/sbin/userdel
+
+//current level	
+su -l
