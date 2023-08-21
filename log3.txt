@@ -14,7 +14,7 @@ check right
 ls -l /root/1.txt
 -rw-r--r--. 1 root root 0 Aug 19 12:56 1.txt
 
-change right:
++++change right:
 	ugorwx:
 	# u g o r w x 
 	#chmod (u/g/o/a)(+/-/=)(r/w/x) file/directory
@@ -31,7 +31,7 @@ change right:
 	# -rwxr-----
 	# ll file1
 
-change owner/group:
+++change owner/group:
 	chown:
 	owner.group
 	#chown alice.hr file1
@@ -56,12 +56,51 @@ practice:
 	
 basic level:
 (access control list) (single user for multiple rights)
-ACL:
+
+++ACL:
 	#user01 rwx file1
 	#user02 rw file1
 	#user03 r file1
 
 	syntax:
 	#setfacl 	-m 	u:alice:rw		/home/text.txt
-	command	  setting    user/group/name/right	file
+		command	  setting    user/group/name/right	file
+	#setfacl -x g:hr /home/test.txt
+		delete hr group acl rights
+	#setfacl -b /home/test.txt
+		delete all acl rights
+
+special rights:
+
+suid:
+	#chmod u+s /usr/bin/cat
+	(temporary owner right)
+	(let cat be used by other user as root)
+	passwd default
+
+sgid:
+	
+		
+
+stick:
+
+chattr:
+	
+	#lsattr file100
+	(add some parameter that can not be deleted)
+	#chattr +i file100r
+
+umask:
+	0777
+	0022
+	------
+	0755 dir
+	0111
+	------
+	0644 fileum
+
+	#umask 0000 (default is 0022)
+
+
+	
 	 
