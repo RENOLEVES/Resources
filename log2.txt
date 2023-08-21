@@ -59,7 +59,7 @@ g_name:g_passwd:gid:g_member(default is empty)
 	
 	# useradd user03 -d /user03
 
-	#useradd -s /sbin/nologin user02 (create user02 but it can not login)
+	# useradd -s /sbin/nologin user02 (create user02 but it can not login)
 
 3.delete user
 	# userdel -r user02

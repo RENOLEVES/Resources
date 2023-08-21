@@ -23,7 +23,45 @@ change right:
 	#chmod a=- 1.txt  (----------) 
 	#chmod ug=rw,o=r 1.txt (-rw-rw-r--)
 
-number
+	number:
+	# read = 4; write = 2; excution = 1;
+	# chmod 644 file1
+	# -rw-r--r--
+	# 740
+	# -rwxr-----
+	# ll file1
 
+change owner/group:
+	chown:
+	owner.group
+	#chown alice.hr file1
+	#chown alice file1
+	#chown .hr file1
+
+	#-R to change all the sub files in a directory
+	#ll -d dir1/ 
+	(check the right of the directory)
+
+	chgrp:
+	only change the group 
+	
+
+
+practice:
+	[root@localhost tmp]# groupadd jishuzu
+	[root@localhost tmp]# usermod -aG jishuzu user200
+	[root@localhost tmp]# id user200
+	uid=1507(user200) gid=1508(user200) groups=1508(user200),1510(jishuzu)
+	
+	
 basic level:
-ACL
+(access control list) (single user for multiple rights)
+ACL:
+	#user01 rwx file1
+	#user02 rw file1
+	#user03 r file1
+
+	syntax:
+	#setfacl 	-m 	u:alice:rw		/home/text.txt
+	command	  setting    user/group/name/right	file
+	 
