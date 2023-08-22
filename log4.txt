@@ -52,7 +52,9 @@ dynamic check (top):
 
 process control (kill):
 	
-	# kill -l 
+	# kill -l PID
+	# kill -15 10001 (terminate 10001)
+
 	1) SIGNUP
 	2) SIGINT
 	3) SIGQUIT
@@ -63,4 +65,44 @@ process control (kill):
 	20)SIGTSTP
 
 
-process order (nice)
+process priority(nice):
+
+	NI order: [-20(higher priority),19(low priority)]
+	
+	NI: nice value
+
+	PR( default: +20): global priority [-20+20,20+19] = [0,39]
+	PR order: [-99,39]
+
+	change priority 
+	1) change priority when it starts:
+	#nice -n -5 sleep 6000 &
+
+	2) change priority when its running:
+	#renice -20 10001
+
+
+jobs:
+
+	foreground: fg 	running in the front
+	some commands can take over the front
+	# fg 1	(background id)
+	release front: # ctrl+z	stopped in the back
+
+
+	background: bg	running in the back
+	# sleep 3000 &
+	'&' can let a command run in the back
+	# bg 1	(background id)
+	running in the back
+
+	# jobs
+	check all the processes running in the back
+
+	# kill %1	(background id)
+
+
+proc:
+
+	cpuinfo, meminfo,cmdline
+
