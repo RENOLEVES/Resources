@@ -1,0 +1,55 @@
+4/1
++++process control:
+
+static check (ps):
+
+
+
+	# ps aux | head -2
+
+
+**User
+   PID: 	 process id
+   %CPU
+   %MEM : memory
+   VSZ: 	 virtual memory
+   RSS: 	 real memory
+   TTY: 	 process terminal
+   STAT: 	 status
+   START:	 start time
+   TIME:	 total running time
+   COMMAND:	process  and command name
+  
+
+	# ps aux --sort -%cpu (" - " means descending order)
+	# ps aux --sort %cpu (asscending order)
+
+	ps relationship: 
+	# ps -ef
+
+	custom search:
+	# ps axo user,pidmcommand | head-5
+
+
+
+dynamic check (top):
+
+
+	# top 
+	
+	#h | ? 	help
+	#M 	rank by memory
+	#P	rank by cpu
+	#N	rank by pid
+	
+	<	forward
+	>	backward
+	z	color
+
+	# top -d 1		refresh every 1s
+	# top -d 1 -p 10001	check pid=10001 process
+
+
+process control (kill):
+
+process order (nice)
