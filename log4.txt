@@ -51,5 +51,16 @@ dynamic check (top):
 
 
 process control (kill):
+	
+	# kill -l 
+	1) SIGNUP
+	2) SIGINT
+	3) SIGQUIT
+	9) SIGKILL
+	15)SIGTERM
+	18)SIGCONT
+	19)SIGSTOP
+	20)SIGTSTP
+
 
 process order (nice)
