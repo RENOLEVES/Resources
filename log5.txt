@@ -1,0 +1,15 @@
+mirror content 
+	
+	# ls /  >  1.txt
+	mirror ls root name of directories to 1.txt
+	
+FD:
+	file descriptors, FD
+	0	stdin	standard input	keyboard		read only
+	1	stdout	standard output	Terminal 		write only
+	2	stderr	standard error	Terminal		write only
+	3+	filename	Other files	none		read and/or write
+
+	output redirect
+	# date 1> date.txt
+	
