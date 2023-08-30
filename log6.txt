@@ -1,0 +1,19 @@
+disk management
+	
+	name 
+
+	IDE	/dev/hda
+	        	/dev/hdb
+
+	SATA 	/dev/sda
+	        	/dev/sdb
+
+	***MBR/GPT
+	MBR: master boot record
+	boot from the first track of the disk
+	MBR < 2TB, 4 sections
+	if disk has more than 4 sections, give up main section, extend section and logic section
+	#fdisk
+
+	GPT: GUIDPartition Table, physical sections partition on disk
+	GPT > 2TB, support 128 section.

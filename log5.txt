@@ -12,4 +12,58 @@ FD:
 
 	output redirect
 	# date 1> date.txt
+
+
+mail
+
+	#mail -s  "sssss"  alice
+	111
+	222
+	333
+	'.'	end sign
+	^D to send the mail
+	input
+
+	in Alice
+	#mail
+
+	s-nail version v14.9.22.  Type `?' for help
+	/var/spool/mail/alice: 1 message 1 new
+	▸N  1 root                  2023-08-29 19:43   25/848   "ssssss     
+
+	press 1 to go to the mail, q to exit
+
+	#mail -s "2222222" alice < word.txt
+
+
+piping service 
 	
+	as parameter 
+	command 1 | command 2 | command 3|....
+	the result of 1 -> 2 -> 3
+	
+	cat /etc/passwd | tail -3
+	cat /etc/passwd | wc	(word counter
+	cat /etc/passwd | grep root
+
+	**tee piping
+	3-direction-piping
+	1 -> 2
+	  \> 3
+
+	#ps aux | tee /dev/pts/0 | grep gnome | wc -l 
+	# tee 88.txt
+	
+	touch file{1..5}
+	cat file.txt | xargs  rm -rf
+	pass the parameter to 'rm' command
+
+	
+	
+	
+
+	
+
+	
+	
+	 
