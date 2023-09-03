@@ -17,3 +17,28 @@ disk management
 
 	GPT: GUIDPartition Table, physical sections partition on disk
 	GPT > 2TB, support 128 section.
+
+partition (MBR of GPT) --> format disk / file system --> mount
+
+
+	check disk
+	# ll /dev/sd* (directory listings)
+
+	check disk and section
+	# lsblk
+
+	create section: MBR
+	# fdisk /dev/sdb
+	# n
+	# 1
+	# +1G
+
+	save and exit
+	#w
+
+	refresh partition
+	#partprobe /dev/sdb
+
+	check disk
+	# fdisk -l /dev/sdb
+
