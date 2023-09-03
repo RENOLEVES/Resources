@@ -27,7 +27,7 @@ partition (MBR of GPT) --> format disk / file system --> mount
 	check disk and section
 	# lsblk
 
-	create section: MBR
+	***create section: MBR
 	# fdisk /dev/sdb
 	# n
 	# 1
@@ -41,4 +41,31 @@ partition (MBR of GPT) --> format disk / file system --> mount
 
 	check disk
 	# fdisk -l /dev/sdb
+
+	***create file system
+	#mkfs.ext4 /dev/sdb1
+
+	***mount (manuellyS)
+	# mkdir /mnt/disk1
+	# mount -t ext4 /dev/sdb1 /mnt/disk1
+
+	check mount info
+	# df -hT
+
+	copy file
+	# dd if=/dev/zero of=/mnt/disk1/1.txt count=200 bs=1M
+
+	copy dir
+	# cp -f /etc /mnt/disk1
+
+	check if the disk has been mounted
+	# mount
+
+	***auto mount
+	# vim /etc/fstab
+	/dev/sdb1 /mnt/disk1 ext4 defaults 0 0
+
+	Go in vim to the end of file and create a new line
+
+	
 
